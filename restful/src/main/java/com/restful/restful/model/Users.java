@@ -36,6 +36,21 @@ public class Users implements UserDetails {
     @Column(name = "username")
     private String username;
 
+    @Column(name = "fullname")
+    private String fullname;
+
+    public String getFullname() {
+        return fullname;
+    }
+
+    public Users setFullname(String fullname) {
+
+        this.fullname = fullname;
+    
+        return this;
+    
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of();
@@ -70,16 +85,21 @@ public class Users implements UserDetails {
         return email;
     }
 
-    public void setEmail(String email) {
+    public Users setEmail(String email) {
         this.email = email;
+        return this;
     }
 
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
+    public Users setPassword(String password) {
+
         this.password = password;
+
+        return this;
+
     }
 
     public Date getCreatedAt() {
